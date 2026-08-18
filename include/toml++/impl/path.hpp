@@ -757,8 +757,8 @@ TOML_NAMESPACE_START
 		/// \brief	Returns a toml::path object that is a specified subpath of the current path, representing the
 		/// range of path components from [start, end).
 		TOML_NODISCARD
-		TOML_EXPORTED_MEMBER_FUNCTION
-		path subpath(const_iterator start, const_iterator end) const;
+		TOML_EXPORTED_STATIC_FUNCTION
+		static path subpath(const_iterator start, const_iterator end);
 
 		/// \brief	Returns a toml::path object that is a specified subpath of the current path, representing the
 		/// range of path components with indexes from [start, start + length].

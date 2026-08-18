@@ -443,7 +443,7 @@ TOML_NAMESPACE_START
 
 	TOML_EXTERNAL_LINKAGE
 	path path::subpath(std::vector<path_component>::const_iterator start,
-					   std::vector<path_component>::const_iterator end) const
+					   std::vector<path_component>::const_iterator end)
 	{
 		if (start >= end)
 			return {};

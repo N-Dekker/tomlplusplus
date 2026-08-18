@@ -138,14 +138,14 @@ TEST_CASE("path - manipulating")
 	{
 		toml::path p0("a.simple[1].path[2].object");
 
-		CHECK(p0.subpath(p0.begin() + 1, p0.begin() + 4).str() == "simple[1].path");
-		CHECK(p0.subpath(p0.begin() + 1, p0.end() - 1).str() == "simple[1].path[2]");
-		CHECK(p0.subpath(p0.begin(), p0.begin()).str() == "");
-		CHECK(p0.subpath(p0.begin(), p0.end() - 5).str() == "a");
-		CHECK(p0.subpath(p0.begin() + 2, p0.end() - 1).str() == "[1].path[2]");
+		CHECK(toml::path::subpath(p0.begin() + 1, p0.begin() + 4).str() == "simple[1].path");
+		CHECK(toml::path::subpath(p0.begin() + 1, p0.end() - 1).str() == "simple[1].path[2]");
+		CHECK(toml::path::subpath(p0.begin(), p0.begin()).str() == "");
+		CHECK(toml::path::subpath(p0.begin(), p0.end() - 5).str() == "a");
+		CHECK(toml::path::subpath(p0.begin() + 2, p0.end() - 1).str() == "[1].path[2]");
 
-		CHECK(p0.subpath(p0.begin() + 5, p0.end() - 5).str() == "");
-		CHECK(!p0.subpath(p0.end(), p0.begin()));
+		CHECK(toml::path::subpath(p0.begin() + 5, p0.end() - 5).str() == "");
+		CHECK(!toml::path::subpath(p0.end(), p0.begin()));
 
 		CHECK(p0.subpath(1, 4).str() == "simple[1].path[2]");
 		CHECK(p0.subpath(0, 0).str() == "");
